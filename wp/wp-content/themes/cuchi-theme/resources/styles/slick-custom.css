@@ -1,0 +1,31 @@
+.cucci-slick .slick-slide {
+  margin: 10px;
+}
+
+.cucci-slick .slick-slide img {
+  width: 100%;
+  border: 2px solid #fff;
+}
+
+.cucci-slick .wrapper .slick-dots li button:before {
+  font-size: 20px;
+  color: white;
+}
+
+.cucci-slick-2 .slick-list {
+  padding: 0 34% 0 0 !important;
+}
+
+.cucci-slick-2 .slick-slide {
+  margin: 10px;
+}
+
+.cucci-slick-2 .slick-slide img {
+  width: 100%;
+}
+
+.cucci-slick-2 .wrapper .slick-dots li button:before {
+  font-size: 20px;
+  color: white;
+}
+/*# sourceMappingURL=slick-custom.css.map */
