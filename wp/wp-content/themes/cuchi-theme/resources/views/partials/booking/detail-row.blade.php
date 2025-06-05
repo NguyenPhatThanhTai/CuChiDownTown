@@ -26,7 +26,7 @@
             </div>
           </div>
           <div class="bookingfeature-section__left__booking__action">
-          <button class="bookingfeature-section__left__booking__button btn btn--primary" type="button" class="btn btn-book-now" data-room-name="{{ $item['title'] }}" data-room-id="{{ $item['select'][0]['title'] }}" data-price="{{ $room['price'] }}" onclick="openBookingPopup(this)"> {{ $item['select'][0]['button_text'] }} </button>
+          <button class="bookingfeature-section__left__booking__button btn btn--primary" type="button" class="btn btn-book-now" data-room-name="{{ $item['title'] }}" data-room-id="{{ $item['select'][0]['room_id'] }}" data-price="{{ $room['price'] }}" onclick="openBookingPopup(this)"> {{ $item['select'][0]['button_text'] }} </button>
             <div class="bookingfeature-section__left__booking__stock">{{ $item['stock_availability_text'] }}</div>
           </div>
         </div>

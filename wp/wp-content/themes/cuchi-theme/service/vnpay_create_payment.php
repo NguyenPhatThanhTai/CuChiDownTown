@@ -1,5 +1,6 @@
 <?php
 require_once get_theme_file_path ('service/db_config/db.php');
+require_once get_theme_file_path ('service/config/config.php');
 
 function create_payment($room, $request){
     error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
@@ -48,8 +49,8 @@ function init_transaction($data) {
 
     $uuid = generate_uuid_v4();
     $room_id = $data['room_id'];
-    $check_in = $data['check_in'];
-    $check_out = $data['check_out'];
+    $check_in = DateTime::createFromFormat('d/m/Y', $data['check_in'])->format('Y-m-d');
+    $check_out = DateTime::createFromFormat('d/m/Y', $data['check_out'])->format('Y-m-d');
     $email = $data['email'];
 
     $sql = "INSERT INTO transaction (id, room_id, check_in, check_out, email)

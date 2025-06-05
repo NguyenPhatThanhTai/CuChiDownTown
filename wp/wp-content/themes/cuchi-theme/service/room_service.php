@@ -60,11 +60,6 @@ class RoomService
         $orderType = "other";
     
         $paymentUrl = create_payment($room, $data);
-    
-        echo json_encode([
-            'message' => 'Booking confirmed, please proceed to payment',
-            'payment_url' => $paymentUrl
-        ]);
 
         sleep(5);
         header("Location: ".$paymentUrl);

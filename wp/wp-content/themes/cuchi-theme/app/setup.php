@@ -17,6 +17,9 @@ require_once get_theme_file_path('service/router/router.php');
 
 add_action('admin_post_nopriv_handle_booking', 'handle_booking_gateway');
 add_action('admin_post_handle_booking', 'handle_booking_gateway');
+add_action('admin_post_submit_booking', 'handle_booking_gateway');
+add_action('admin_post_nopriv_submit_booking', 'handle_booking_gateway');
+
 
 
 add_action('wp_enqueue_scripts', function () {
