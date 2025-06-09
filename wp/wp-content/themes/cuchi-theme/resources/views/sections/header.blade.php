@@ -159,3 +159,56 @@
   </div>
   @endif
 </header>
+
+<style>
+  #loadingScreenOverlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column; /* so text goes below spinner */
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #996515;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 0.9s linear infinite;
+}
+
+.loading-text {
+  margin-top: 16px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+<div id="loadingScreenOverlay" style="display: none;">
+    <div class="loader"></div>
+    <p class="loading-text">Finding...</p>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector(".header__hero form");
+      if (form) {
+        form.addEventListener("submit", function () {
+          document.getElementById("loadingScreenOverlay").style.display = "flex";
+        });
+      }
+    });
+</script>

@@ -29,10 +29,10 @@
           @break
       @endswitch
     @endforeach
-
+    <div class="scroll-to-here"></div>
     {{-- Render available rooms from search --}}
     @if (!empty($available_rooms))
-      <h2 class="booking-page__available-title">Available Rooms</h2>
+      <h2 style="display: center; padding: 10%" class="booking-page__available-title">Available Rooms</h2>
 
       @foreach ($available_rooms as $room)
         @php
@@ -251,6 +251,16 @@
 
 
 <script>
+    window.addEventListener("load", function () {
+      const target = document.querySelector(".scroll-to-here");
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }
+    });
+
     function openBookingPopup(button) {
       const roomName = button.getAttribute('data-room-name');
       const roomId = button.getAttribute('data-room-id');
